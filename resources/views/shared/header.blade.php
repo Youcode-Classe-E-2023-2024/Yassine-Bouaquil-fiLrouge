@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{asset('./css')}}">
     @livewireStyles
 </head>
+<body style="background-color: #FCF3F3">
 
 <!-- component -->
 <style>
@@ -151,6 +152,185 @@
             width: calc(100% - 16rem);
         }
     }
+    @keyframes fadeInRight {
+        from {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 0.75;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .animate-fadeInRight {
+        animation: fadeInRight 1s ease-out;
+    }
+
+    .animate-fadeInUp {
+        animation: fadeInUp 1s ease-out;
+    }
+
+    .animate-fadeInLeft {
+        animation: fadeInLeft 1s ease-out;
+    }
+    @keyframes pulse {
+        0% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 rgba(67, 104, 80, 0.7);
+        }
+        70% {
+            transform: scale(1);
+            box-shadow: 0 0 0 10px rgba(67, 104, 80, 0);
+        }
+        100% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 rgba(67, 104, 80, 0);
+        }
+    }
+
+    .animate-pulse {
+        animation: pulse 2s infinite;
+    }
+    .camera-animation-container {
+        position: relative;
+    }
+
+    .camera-animation {
+        animation: cameraMove 20s linear infinite;
+    }
+
+    @keyframes cameraMove {
+        0% {
+            transform: translateX(-50%) translateY(-50%);
+        }
+        50% {
+            transform: translateX(50%) translateY(50%);
+        }
+        100% {
+            transform: translateX(-50%) translateY(-50%);
+        }
+    }
+
+    .camera-particle {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background-color: #2B3D4F; /* Couleur des particules */
+        border-radius: 50%;
+    }
+
+    .camera-particle:nth-child(1) {
+        top: 20%;
+        left: 20%;
+    }
+
+    .camera-particle:nth-child(2) {
+        top: 50%;
+        left: 50%;
+    }
+
+    .camera-particle:nth-child(3) {
+        top: 80%;
+        left: 80%;
+    }
+    /* Ajoutez plus de règles pour positionner d'autres particules */
+
+    .shadow-image {
+        position: relative;
+    }
+
+    .image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px; /* Arrondir les coins de l'image */
+        filter: grayscale(10%) sepia(10%) brightness(100%) contrast(100%); /* Appliquer un filtre pour ajuster la couleur et le contraste */
+        transition: filter 0.3s ease-in-out; /* Ajouter une transition fluide lors du survol */
+    }
+
+    .shadow-image::after {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: calc(100% - 20px);
+        height: calc(100% - 20px);
+        background-color: rgba(0, 0, 0, 0.5); /* Couleur de l'ombre */
+        border-radius: 10px;
+        z-index: -1;
+        transition: opacity 0.3s ease-in-out; /* Ajouter une transition fluide pour l'opacité */
+        opacity: 0; /* Initialiser l'opacité à 0 pour masquer l'ombre */
+    }
+
+    .shadow-image:hover::after {
+        opacity: 1; /* Augmenter l'opacité au survol */
+    }
+
+    .shadow-image:hover .image {
+        filter: grayscale(100%) sepia(100%) brightness(90%) contrast(120%); /* Appliquer un filtre différent au survol */
+    }
+
+
+
+    .dynamic-background {
+        animation: backgroundShift 10s ease infinite alternate;
+    }
+
+    @keyframes backgroundShift {
+        0% {
+            background: linear-gradient(15deg, #FCF3F3, #ADBC9F);
+        }
+        100% {
+            background: linear-gradient(15deg, #FCF3F3, #ADBC9F);
+        }
+    }
+    .dynamic-background-2 {
+        animation: backgroundShift 10s ease infinite alternate;
+    }
+
+    @keyframes backgroundShift {
+        0% {
+            background: linear-gradient(15deg,#ADBC9F, #FCF3F3);
+        }
+        100% {
+            background: linear-gradient(15deg, #ADBC9F, #FCF3F3);
+        }
+    }
+
+
+    .animate-hover:hover {
+        transform: translateY(-5px); /* Déplace les éléments vers le haut au survol */
+    }
+
+    .animate-hover {
+        transition: transform 0.3s ease; /* Ajoute une transition douce */
+    }
+
+    .transition-opacity {
+        transition: opacity 0.5s ease-in-out; /* Ajoute une transition de 0.5 seconde pour l'opacité */
+    }
 
 </style>
 
@@ -167,3 +347,4 @@
         });
     });
 </script>
+
