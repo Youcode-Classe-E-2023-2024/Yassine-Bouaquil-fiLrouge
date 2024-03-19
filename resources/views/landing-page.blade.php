@@ -12,7 +12,7 @@
 
             <!-- Ajoutez plus de particules selon vos préférences -->
         </div>
-        <div class="flex flex-col space-y-10 animate-fadeInRight z-10">
+        <div class="flex flex-col space-y-10 animate-fadeInRight">
             <h1 style="color: #2B3D4F; font-weight: bold; font-size: 94px">
                 Déchainer <br>
                 L'Art de la <br>

@@ -7,8 +7,8 @@
     <!-- Links -->
     <div class="hidden md:block flex justify-between items-center max-w-7xl mx-auto ">
         <ul class="space-x-8 text-white flex justify-between items-center font-poppins">
-            <li><a href="#" class="font-bold hover:text-gray-300">Home</a></li>
-            <li><a href="#" class="font-bold hover:text-gray-300">Services</a></li>
+            <li><a href="{{ route('home') }}" class="font-bold hover:text-gray-300">Home</a></li>
+            <li><a href="{{ route('services') }}" class="font-bold hover:text-gray-300">Services</a></li>
             <li><a href="#" class="font-bold hover:text-gray-300">About Us</a></li>
             <li><a href="#" class="font-bold hover:text-gray-300">Portfolio</a></li>
         </ul>

@@ -18,9 +18,9 @@ use App\Http\Controllers\OrganizerSubController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('landing-page');
-});
+})->name('home');
 
 /* main route */
 Route::get('/main', [MainController::class, 'index'])->name('main')->middleware('auth');
@@ -37,6 +37,11 @@ Route::post('/login', [AuthController::class, 'authenticate'])->name('login.auth
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
 
 Route::delete('/user/delete', [AuthController::class, 'destroy'])->name('user.delete');
+Route::get('/services',function (){
+    return view('services');
+
+})->name('services');
+
 
 /* forget-password route */
 Route::get('/forget-password', [ForgetPasswordController::class, 'forgetPassword'])->name('forget.password');
